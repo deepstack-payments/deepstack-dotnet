@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+<!--    <TargetFramework>net6.0</TargetFramework>-->
+      <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>DeepStack</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageId>GloballyPaid.net</PackageId>
+    <Authors>GloballyPaidDotNetTeam</Authors>
+    <Company>GloballyPaid</Company>
+    <Product>GloballyPaid.net</Product>
+    <Description>The official Deepstack .NET library
+Supporting .NET Standard 2.0</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/globallypaid/globallypaid-sdk-dotnet</PackageProjectUrl>
+    <PackageTags>deepstack;payment;credit;cards;money;gateway;paypal;charge</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+  </ItemGroup>
+
+</Project>

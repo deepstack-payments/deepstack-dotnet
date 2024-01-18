@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepStack.CSharp.Sdk.Tests", "DeepStack.CSharp.Sdk.Tests\DeepStack.CSharp.Sdk.Tests.csproj", "{BB1D59B7-85B5-45C7-91ED-A53C075A86DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepStack.CSharp.Sdk", "DeepStack.CSharp.Sdk\DeepStack.CSharp.Sdk.csproj", "{532835A9-D220-488A-95B2-CA09C8D02E51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB1D59B7-85B5-45C7-91ED-A53C075A86DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB1D59B7-85B5-45C7-91ED-A53C075A86DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB1D59B7-85B5-45C7-91ED-A53C075A86DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB1D59B7-85B5-45C7-91ED-A53C075A86DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{532835A9-D220-488A-95B2-CA09C8D02E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{532835A9-D220-488A-95B2-CA09C8D02E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{532835A9-D220-488A-95B2-CA09C8D02E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{532835A9-D220-488A-95B2-CA09C8D02E51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {287D2158-6189-4D92-97CD-F3ACB9000518}
+	EndGlobalSection
+EndGlobal
