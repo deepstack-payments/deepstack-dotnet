@@ -11,7 +11,7 @@ using Xunit;
 
 namespace DeepStack.Tests
 {
-    [Collection("Globally Paid SDK tests")]
+    [Collection("DeepStack SDK tests")]
     public class BaseTest
     {
         protected string _Id = "card_981234kjsdf8913";

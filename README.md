@@ -64,7 +64,7 @@ All SDK calls can be configured within `ConfigureServices` method in `Startup` c
 Additionally, this extension call will register all Deepstack services:
 
 ```c#
-services.AddGloballyPaid("Your Publishable API Key", "Your Shared Secret", "Your APP ID", useSandbox: false, requestTimeoutSeconds: 90);
+services.AddDeepStack("Your Publishable API Key", "Your Shared Secret", "Your APP ID", useSandbox: false, requestTimeoutSeconds: 90);
 ```
 
 To register the Deepstack services only, `AddDeepStackServices` extension can be used:
