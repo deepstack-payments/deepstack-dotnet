@@ -46,17 +46,17 @@ From within Visual Studio:
 
 ## Documentation
 
-For the Deepstack API documentation, please visit [Deepstack API documentation][gp-api-docs] 
+For the Deepstack API documentation, please visit [Deepstack API documentation][ds-api-docs] 
 
 ## Samples
 
-For a comprehensive list of examples, please visit [Globally Paid .NET SDK samples][gp-dotnet-samples].
+For a comprehensive list of examples, please visit [Deepstack.NET SDK samples][ds-dotnet-samples].
 
 ## Usage
 
 ### Configuration
 
-There are three ways to configure the Globally Paid SDK:
+There are three ways to configure the Deepstack SDK:
 
 ##### 1. Startup Extension
 
@@ -113,21 +113,102 @@ var requestOptions = new RequestOptions("Your Publishable API Key", "Your Shared
 ```
 ---
 
-### Sample Charge Sale Transaction
+### Sample Charge Sale Transaction with Token/Payment instrument
 ```c#
 var request = new ChargeRequest
             {
-                Source = "source", //this can be the token or payment instrument identifier
-                Amount = 1299,
-                Capture = true, //sale charge
-                ClientCustomerId = "12345", //set your customer id
-                ClientInvoiceId = "IX213", //set your invoice id
-                ClientTransactionDescription = "Tuition for CS" //set your transaction description
+                Source = new PaymentSourceCardOnFile()
+                {
+                    Type = PaymentSourceType.CARD_ON_FILE,
+                    CardOnFile = new CardOnFile()
+                    {
+                        Id = "ID", // This should be the token/PaymentInstrument ID value
+                        CVV = "CVV" 
+                    }
+                },
+                Params = new TransactionParameters()
+                {
+                    Amount = 100,
+                    Capture = true, //sale charge
+                    CofType = CofType.UNSCHEDULED_CARDHOLDER,
+                    CurrencyCode = CurrencyCode.USD,
+                    CountryCode = ISO3166CountryCode.USA,
+                    SavePaymentInstrument = false,
+                    Descriptor = "test",
+                    Fees = new List<Fee>()
+                    {
+                        new Fee()
+                        {
+                            FeeType = "Service Fee",
+                            Description = "5% tip for servers",
+                            Amount = 100
+                        }
+                    }
+                },
+                Meta = new TransactionMeta(){
+                    ClientCustomerID = "12345", //set your customer id
+                    ClientInvoiceID = "IX213", //set your invoice id
+                    ClientTransactionDescription = "E-comm order", // any useful description
+                    ClientTransactionID = "000111222333"
+                }
             };
 
 //if Deepstack services are registered, you can inject this as IChargeService in the constructor
 var chargeService = new ChargeService(); 
 var charge = chargeService.Charge(request);
+```
+
+### Sample Charge Sale Transaction with Raw Card (implementing the JS-SDK allow only tokens to be sent to the integrator's backend)
+```c#
+var card = new PaymentSourceRawCard(){
+    CreditCard = new CreditCard(){
+        AccountNumber = "4111111111111111",
+        CVV = "CVV"
+        Expiration = "0929"
+    },
+    BillingContact = new BillingContact(){
+        FirstName = "John",
+        LastName = "Doe",
+        Email = "test@test.com"
+        Phone = "123-123-1234",
+        Address = new Address(){
+            Line1 = "123 Some St",
+            City = "City",
+            State = "CA",
+            CountryCode = ISO3166CountryCode.USA
+        }
+    }
+}
+
+var request = new ChargeRequest
+            {
+                Source card,
+                Params = new TransactionParameters()
+                {
+                    Amount = 100,
+                    Capture = true, //sale charge
+                    CofType = CofType.UNSCHEDULED_CARDHOLDER,
+                    CurrencyCode = CurrencyCode.USD,
+                    CountryCode = ISO3166CountryCode.USA,
+                    SavePaymentInstrument = false,
+                    Descriptor = "test",
+                    Fees = new List<Fee>()
+                    {
+                        new Fee()
+                        {
+                            FeeType = "Service Fee",
+                            Description = "5% tip for servers",
+                            Amount = 100
+                        }
+                    }
+                },
+                Meta = new TransactionMeta(){
+                    ClientCustomerID = "12345", //set your customer id
+                    ClientInvoiceID = "IX213", //set your invoice id
+                    ClientTransactionDescription = "E-comm order", // any useful description
+                    ClientTransactionID = "000111222333"
+                }
+            };
 ```
 
 ---

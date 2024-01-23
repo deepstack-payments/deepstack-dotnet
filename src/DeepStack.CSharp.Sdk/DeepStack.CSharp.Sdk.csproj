@@ -6,14 +6,14 @@
     <RootNamespace>DeepStack</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageId>GloballyPaid.net</PackageId>
-    <Authors>GloballyPaidDotNetTeam</Authors>
-    <Company>GloballyPaid</Company>
-    <Product>GloballyPaid.net</Product>
+    <PackageId>DeepStack.net</PackageId>
+    <Authors>DeepstackDotNetTeam</Authors>
+    <Company>Deepstack</Company>
+    <Product>Deepstack.net</Product>
     <Description>The official Deepstack .NET library
 Supporting .NET Standard 2.0</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/globallypaid/globallypaid-sdk-dotnet</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/deepstack-payments/deepstack-dotnet</PackageProjectUrl>
     <PackageTags>deepstack;payment;credit;cards;money;gateway;paypal;charge</PackageTags>
   </PropertyGroup>
 
